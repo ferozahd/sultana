@@ -13,8 +13,8 @@ import java.util.List;
 public class Student {
     private ObjectId id;
     private String studentName;
-    private String cllassName;
-    private int rollNamber;
+    private String className;
+    private int rollNumber;
     private String schoolName;
     private String headTeacherName;
     private List<String> friends=new ArrayList<>();
@@ -22,7 +22,7 @@ public class Student {
     private String studentFatherName;
     private String villageName;
     private String postOfficeName;
-    private String thanaName;
-    private String districName;
+    private String policeStation ;
+    private String districtName;
 
 }
