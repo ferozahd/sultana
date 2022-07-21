@@ -17,8 +17,8 @@ public class StudentController {
     ResponseEntity<?> student(@RequestBody PostStudent post){
         Student student =new Student();
         student.setStudentName(post.getStudentName());
-        student.setCllassName(post.getCllassName());
-        student.setRollNamber(post.getRollNamber());
+        student.setClassName(post.getCllassName());
+        student.setRollNumber(post.getRollNamber());
         student.setHeadTeacherName(post.getHeadTeacherName());
         student.setSchoolName(post.getSchoolName());
         student.setFriends(post.getFriends());
@@ -26,8 +26,8 @@ public class StudentController {
         student.setStudentFatherName(post.getStudentFatherName());
         student.setVillageName(post.getVillageName());
         student.setPostOfficeName(post.getPostOfficeName());
-        student.setThanaName(post.getThanaName());
-        student.setDistricName(post.getDistricName());
+        student.setPoliceStation(post.getThanaName());
+        student.setDistrictName(post.getDistricName());
        template.save(student);
         return ResponseEntity.ok(student);
 
