@@ -28,6 +28,7 @@ public class StudentController {
         student.setPostOfficeName(post.getPostOfficeName());
         student.setPoliceStation(post.getThanaName());
         student.setDistrictName(post.getDistricName());
+        student.setCountry(post.getCountry());
        template.save(student);
         return ResponseEntity.ok(student);
 

@@ -24,5 +24,6 @@ public class Student {
     private String postOfficeName;
     private String policeStation ;
     private String districtName;
+    private String country;
 
 }
