@@ -3,6 +3,7 @@ package com.tutorial.sultana.controllers;
 import com.tutorial.sultana.entities.Mans;
 import com.tutorial.sultana.entities.Persons;
 import com.tutorial.sultana.entities.Student;
+import com.tutorial.sultana.mapper.PersonMapper;
 import com.tutorial.sultana.moduls.PostMan;
 import com.tutorial.sultana.moduls.PostResource;
 import com.tutorial.sultana.moduls.PostStudent;
@@ -20,20 +21,15 @@ public class ResturentController {
   @Autowired
   private MongoTemplate mongoTemplate;
 
+  @Autowired
+  private PersonMapper personMapper;
 
 
 
   @PostMapping("/restaurant")
     ResponseEntity<?> resturent(@RequestBody PostResource post){
 
-    Persons persons=new Persons();
-
-    persons.setName(post.getName());
-    persons.setFatherName(post.getFatherName());
-    persons.setMotherName(post.getMotherName());
-    persons.setAge(post.getAge());
-    persons.setAddress(post.getAddress());
-    persons.setFriends(post.getFriends());
+      Persons persons =personMapper.toPerson(post);
     mongoTemplate.save(persons);
 
     return ResponseEntity.ok(persons);
