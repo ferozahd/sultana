@@ -27,7 +27,7 @@ public class ResturentController {
     @Autowired
     private MansMapper mansMapper;
 
-    @PostMapping("/restaurant")
+    @PostMapping("/persons")
     ResponseEntity<?> resturent(@RequestBody PostResource post) {
 
         Persons persons = personMapper.toPerson(post);
