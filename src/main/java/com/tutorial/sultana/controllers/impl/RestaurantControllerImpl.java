@@ -35,8 +35,8 @@ public class RestaurantControllerImpl implements RestaurantController {
     public ResponseEntity<?> student(PostMan post) {
         Mans mans = new Mans();
         mans.setName(post.getName());
-        mans.setCllass(post.getCllass());
-        mans.setRollNamber(post.getRollNamber());
+        mans.setClassName(post.getClassName());
+        mans.setRollNumber(post.getRollNumber());
         mans.setTeacher(post.getTeacher());
         mongoTemplate.save(mans);
         return ResponseEntity.ok(mans);
