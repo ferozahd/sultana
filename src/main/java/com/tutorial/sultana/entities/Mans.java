@@ -17,8 +17,8 @@ public class Mans {
     @Id
     private ObjectId Id;
     private String name;
-    private String cllass;
-    private int rollNamber;
+    private String className;
+    private int rollNumber;
     private List<String> teacher=new ArrayList<>();
 
 }
