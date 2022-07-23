@@ -36,8 +36,8 @@ public class ResturentController {
         return ResponseEntity.ok(persons);
     }
 
-    @PostMapping("/student")
-    ResponseEntity<?> student(@RequestBody PostMan post) {
+    @PostMapping("/mans")
+    ResponseEntity<?> mans(@RequestBody PostMan post) {
         Mans mans = mansMapper.toMans(post);
         mongoTemplate.save(mans);
         return ResponseEntity.ok(mans);

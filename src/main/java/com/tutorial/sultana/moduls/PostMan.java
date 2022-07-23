@@ -12,5 +12,6 @@ public class PostMan {
     private String name;
     private String className;
     private int rollNumber;
-    private List<String> teacher=new ArrayList<>();
+    private List<String> teachers=new ArrayList<>();
+    private String headTeacherName;
 }
