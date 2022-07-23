@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class StudentController {
+public class StudentController  {
     @Autowired
     private MongoTemplate template;
     @Autowired
@@ -23,4 +23,5 @@ public class StudentController {
         return ResponseEntity.ok(student);
 
     }
+
 }
