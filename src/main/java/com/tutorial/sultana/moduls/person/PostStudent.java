@@ -1,4 +1,4 @@
-package com.tutorial.sultana.moduls;
+package com.tutorial.sultana.moduls.person;
 
 import lombok.Getter;
 import lombok.Setter;
