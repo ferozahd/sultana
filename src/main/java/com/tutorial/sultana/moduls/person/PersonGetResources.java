@@ -1,4 +1,4 @@
-package com.tutorial.sultana.moduls;
+package com.tutorial.sultana.moduls.person;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 public class PersonGetResources {
 
-    private String id;
+    private String identity;
     private String name;
     private String fatherName;
     private String motherName;
