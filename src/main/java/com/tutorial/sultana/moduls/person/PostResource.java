@@ -8,9 +8,9 @@ import java.util.List;
 @Setter
 public class PostResource {
     private String name;
-    private String fatherName;
-    private String motherName;
+//    private String fatherId;
+//    private String motherId;
     private int age;
     private String address;
-    private List<String> friends;
+    private String school;
 }
