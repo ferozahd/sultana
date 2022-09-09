@@ -1,7 +1,6 @@
 package com.tutorial.sultana.service.security.impl;
 
-import com.tutorial.sultana.entities.User;
-import com.tutorial.sultana.exceptions.ResourceNotFoundException;
+import com.tutorial.sultana.exceptions.BadCredentialsException;
 import com.tutorial.sultana.repo.UserRepository;
 import com.tutorial.sultana.service.security.UserServiceDetails;
 import lombok.RequiredArgsConstructor;
@@ -16,9 +15,9 @@ public class UserServiceDetailsImpl implements UserServiceDetails {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUserName(username)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
-        return new RootUserDetails(user);
+        return new RootUserDetails(userRepository.findByUserName(username)
+            .orElseThrow(() -> new BadCredentialsException("un authorized user"))
+        );
     }
 }
 
