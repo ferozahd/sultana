@@ -1,26 +1,33 @@
 package com.tutorial.sultana.controllers;
 
+import com.tutorial.sultana.moduls.person.PersonDetailsResponse;
 import com.tutorial.sultana.moduls.person.PersonGetResources;
 import com.tutorial.sultana.moduls.person.PostResource;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
+@RequestMapping("person/")
 public interface PersonController {
 
-    @PostMapping("person/create")
+    @PostMapping("create")
     ResponseEntity<PersonGetResources> create(@RequestBody PostResource post);
 
 
-    @GetMapping("person/getAll")
-    ResponseEntity<List<PersonGetResources>> getAll();
+    @GetMapping("getAll/{index}")
+    ResponseEntity<Page<PersonGetResources>> getAll(@PathVariable int index);
 
 
-    @GetMapping("person/getOne/{id}")
-    ResponseEntity<PersonGetResources> getOne(@PathVariable("id") String id);
+    @GetMapping("getOne/{id}")
+    ResponseEntity<PersonDetailsResponse> getOne(@PathVariable("id") String id);
 
+    @PatchMapping("set-father/{fatherId}/{personId}")
+    ResponseEntity<PersonGetResources> setFather(@PathVariable String fatherId, @PathVariable String personId);
+
+
+    @PatchMapping("set-mother/{motherId}/{personId}")
+    ResponseEntity<PersonGetResources> setMother(@PathVariable String motherId, @PathVariable String personId);
+
+    @PatchMapping("set-siblings/{siblingId}/{personId}")
+    ResponseEntity<PersonGetResources> setSibling(@PathVariable String siblingId, @PathVariable String personId);
 }
