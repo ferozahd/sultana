@@ -25,5 +25,5 @@ public interface JwtService {
 
     boolean validateToken(String token, UserDetails userDetails);
 
-    String parseBarerToken(String barerToken);
+    String parseBearerToken(String barerToken);
 }
