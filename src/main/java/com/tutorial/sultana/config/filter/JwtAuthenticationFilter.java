@@ -28,9 +28,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
     private static final String TOKEN = "token";
     private static final String BEARER = "Bearer ";
-    private UserServiceDetails userServiceDetails;
 
-    private final RootUserDetails customerDetailsService;
+    private final UserServiceDetails customerDetailsService;
 
 
     @Override
@@ -64,7 +63,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                 logger.debug("security context was null, so authorizing user");
 
-                RootUserDetails userDetails = (RootUserDetails) this.userServiceDetails.loadUserByUsername(username);
+                RootUserDetails userDetails = (RootUserDetails) this.customerDetailsService.loadUserByUsername(username);
 
 
                 if (jwtService.validateToken(authToken, userDetails)) {
